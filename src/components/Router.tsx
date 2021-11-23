@@ -1,9 +1,9 @@
-import { ReactElement } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { HOME_PAGE, LOGIN_PAGE, REGISTER_PAGE } from "../constants";
-import HomePage from "../pages/HomePage";
-import LoginPage from "../pages/LoginPage";
-import RegisterPage from "../pages/RegisterPage";
+import { ReactElement } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HOME_PAGE, LOGIN_PAGE, REGISTER_PAGE } from '../constants'
+import HomePage from '../pages/HomePage'
+import LoginPage from '../pages/LoginPage'
+import RegisterPage from '../pages/RegisterPage'
 
 export default function Router(): ReactElement {
   return (
@@ -14,5 +14,5 @@ export default function Router(): ReactElement {
         <Route path={REGISTER_PAGE} element={<RegisterPage />} />
       </Routes>
     </BrowserRouter>
-  );
+  )
 }

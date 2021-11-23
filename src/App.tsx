@@ -1,11 +1,7 @@
-import Router from "./components/Router";
+import Router from './components/Router'
 
-function App() {
-  return (
-    <>
-      <Router />
-    </>
-  );
+export interface IAppProps {}
+
+export default function App() {
+  return <Router />
 }
-
-export default App;
