@@ -15,7 +15,9 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "space-before-function-paren": ["error", "never"]
+    "space-before-function-paren": ["error", "never"],
+    "semi": 0,
+    "no-use-before-define": 0
   },
   "settings": {
     "react": {

@@ -1,7 +1,5 @@
-import Router from './components/Router'
-
-export interface IAppProps {}
+import Router from './components/Router';
 
 export default function App() {
-  return <Router />
+  return <Router />;
 }
