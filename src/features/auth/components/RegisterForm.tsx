@@ -1,5 +1,9 @@
+import { useTranslation } from 'react-i18next';
+
 export interface IRegisterFormProps {}
 
 export default function RegisterForm(props: IRegisterFormProps) {
-  return <div>RegisterForm</div>;
+  const { t } = useTranslation();
+
+  return <div>{t('general.loggedOut')}</div>;
 }
