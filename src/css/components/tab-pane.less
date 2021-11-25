@@ -1,0 +1,27 @@
+.tab-pane__header__title {
+    @media screen and (max-width: 479px) {
+        text-align: center;
+    }
+    @media screen and (min-width: @screen-sm) { // 768px and up
+        float: left;
+        margin: 6px 0 15px;
+    }
+}
+.tab-pane__header__control {
+    @media screen and (max-width: 479px) {
+        display: block;
+    }
+    @media screen and (min-width: @screen-sm) { // 768px and up
+        float: right;
+    }
+}
+.tab-pane__control {
+    @media screen and (max-width: 479px) {
+        display: block;
+        width: 100%;
+        margin-top: 30px;
+    }
+    @media screen and (min-width: @screen-xs) { // 480px and up
+        float: right;
+    }
+}

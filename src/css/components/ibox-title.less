@@ -1,0 +1,74 @@
+.ibox-title {
+    // Remove theme's height restriction
+    height: auto;
+    min-height: 48px;
+    // Horrible specificity here to override theme styles
+    h4.pull-left {
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    h5.ibox-title--link--badge {
+        margin-right: 20px;
+        display: block;
+        max-width: 100%;
+    }
+    h5 {
+        max-width: 90%;
+        word-wrap: break-word;
+    }
+    &:after {
+        // Make box expand around content when it goes multi-line
+        content: '';
+        clear: both;
+        display: block;
+    }
+}
+
+.ibox-title--link--badge {
+    .btn-link {
+        font-weight: bold;
+    }
+    .badge {
+        float: right;
+        margin-top: -1px;
+        margin-left: 4px;
+    }
+    .fa {
+        margin-right: 5px;
+    }
+}
+
+.ibox-title--link--badge__icon {
+    float: left;
+}
+
+.ibox-title--link--badge__text {
+    margin-left: 20px;
+    display: block;
+    margin-top: -2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 18px;
+}
+
+// Right-hand controls in an ibox's title
+.ibox-title__nav {
+    float: right;
+    margin-top: -7px;
+    .btn-sm {
+        padding: 5px 0px 5px 20px;
+    }
+    .fa {
+        padding-right: 5px;
+    }
+    @media only screen and (max-width: 1024px) {
+        // Remove right alignment, reset styles accordingly
+        float: none;
+        .btn-sm {
+            padding: 5px 20px 5px 0px;
+        }
+    }
+    @media only screen and (max-width: 568px) {
+        margin-top: 4px;
+    }
+}

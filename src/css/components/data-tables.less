@@ -1,0 +1,336 @@
+// To anyone reviewing/working on this in future:
+// Styles in here are much too specific. That's because they're variously trying
+// to override the Bootstrap theme, and/or Datatables.
+// Don't spend time trying to re-factor them to be easier to work with, as you'll
+// end up trying to re-factor the theme/Datatables itself.
+// We could probably re-factor enough to remove the need for !important, but the
+// layouts governed by this file are so complex that the testing time alone makes
+// it prohibitively expensive.
+
+// These styles are here to correct errors in the styles that come with the
+// dataTables library, e.g. arrows in the wrong place after a sort
+.table.dataTable.no-footer {
+    box-sizing: border-box;
+    border: none;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    & > thead > tr > th,
+    & > tbody > tr > th,
+    & > tfoot > tr > th,
+    & > thead > tr > td,
+    & > tbody > tr > td,
+    & > tfoot > tr > td {
+        border-top: none;
+        border-left: none;
+    }
+    th.sorting_asc, th.sorting_desc {
+        &:before {
+            // Hide extraneous left-aligned arrows
+            display: none;
+        }
+    }
+}
+
+.table.dataTable thead {
+    > tr > th.sorting_disabled {
+        background-color: #fff;
+    }
+    // Fix for theme v2.4
+    .sorting_asc {
+        // Remove up arrow that's from a background image
+        background-image: none;
+        &:after {
+            // Add back proper up arrow using generated content
+            content: "\f0de";
+            float: right;
+            font-family: fontawesome;
+            color: rgba(50, 50, 50, 0.5);
+        }
+    }
+    .sorting_desc {
+        &:after {
+            content: "\f0dd";
+            float: right;
+            font-family: fontawesome;
+            color: rgba(50, 50, 50, 0.5);
+        }
+    }
+    .sorting {
+        &:after {
+            content: "\f0dc";
+            float: right;
+            font-family: fontawesome;
+            color: rgba(50, 50, 50, 0.5);
+        }
+    }
+}
+
+.dataTables_wrapper .dataTables_filter {
+    max-width: 100%;
+    // Fix for theme v2.4
+    label {
+        margin-right: 0;
+    }
+    @media only screen and (max-width: @screen-xs-max) { // 767px
+        text-align: left;
+        float: none;
+        margin-top: 0px;
+        padding: 2px 13px 10px 13px;
+        .table-responsive--restructure--full-width & {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        label {
+            float: none;
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        input {
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+}
+
+// TODO: Re-do these styles to remove use of !important
+
+// Styles for specific types of data table
+.table--sortable--datasets {
+    // Make the table obey its column width settings
+    table-layout: fixed;
+    & > thead > tr > th {
+        // First column is hidden, set sensible widths on the others
+        // Dataset name
+        &:nth-child(2) {
+            width: 35% !important;
+        }
+        // Device
+        &:nth-child(3) {
+            width: 21% !important;
+            @media only screen and (min-width: 1025px) {
+                width: 25% !important;
+            }
+        }
+        // Last sync
+        &:nth-child(4) {
+            width: 20% !important;
+        }
+        // Buttons etc.
+        &:nth-child(5) {
+            width: 24% !important;
+            @media only screen and (min-width: 1025px) {
+                width: 20% !important;
+            }
+        }
+    }
+    & > tbody > tr > td {
+        &:nth-child(2), &:nth-child(3) {
+            // Force wrapping in columns that may have long text strings in them
+            a, span {
+                word-wrap: break-word;
+            }
+        }
+    }
+}
+
+// Selectable version of the above table has a thin first visible column
+// containing radio button or similar
+.table--sortable--datasets--selectable {
+    // Make the table obey its column width settings
+    table-layout: fixed;
+    & > thead > tr > th {
+        // First column is hidden, set sensible widths on the others
+        // Select
+        &:nth-child(2) {
+            width: 5% !important;
+        }
+        // Dataset name
+        &:nth-child(3) {
+            width: 47% !important;
+        }
+        // Device
+        &:nth-child(4) {
+            width: 28% !important;
+        }
+        // Last sync
+        &:nth-child(5) {
+            width: 20% !important;
+        }
+    }
+    & > tbody > tr > td {
+        &:nth-child(3), &:nth-child(4) {
+            // Force wrapping in columns that may have long text strings in them
+            a, span {
+                word-wrap: break-word;
+            }
+        }
+    }
+    & > tbody > tr > th {
+        // Inputs
+        input[type="radio"] {
+            float: right;
+            margin-top: 0;
+        }
+    }
+}
+
+// Reports table is visually same as datasets table, but has no hidden first column
+// So nth-child numbers are one out
+.table--sortable--reports,
+.table--sortable--dashboards {
+    // Make the table obey its column width settings
+    table-layout: fixed;
+    & > thead > tr > th {
+        // Report
+        &:nth-child(1) {
+            width: 35% !important;
+        }
+        // Last modified
+        &:nth-child(2) {
+            width: 21% !important;
+            @media only screen and (min-width: 1025px) {
+                width: 25% !important;
+            }
+        }
+        // Datasets
+        &:nth-child(3) {
+            width: 20% !important;
+        }
+        // Buttons etc.
+        &:nth-child(4) {
+            width: 24% !important;
+            @media only screen and (min-width: 1025px) {
+                width: 20% !important;
+            }
+        }
+    }
+    & > tbody > tr > td {
+        &:nth-child(1), &:nth-child(2) {
+            // Force wrapping in columns that may have long text strings in them
+            a, span {
+                word-wrap: break-word;
+            }
+        }
+    }
+}
+
+// Dashboards table is very similar to reports, but has fewer columns.
+.table--sortable--dashboards {
+    & > thead > tr > th {
+        // Override only this column since the "view" button is wider
+        &:nth-child(4) {
+            width: 38% !important;
+            @media only screen and (min-width: 1025px) {
+                width: 26% !important;
+            }
+        }
+    }
+}
+
+// Notifications table looks like a DataTables table, but is searched using Angular only
+.table-responsive--restructure--full-width table.table--notifications {
+    border-bottom: 1px solid #e7eaec !important;
+}
+.table--notifications {
+    // Make the table obey its column width settings
+    table-layout: fixed;
+    // Column containing message title
+    & > tbody > tr > th {
+        @media only screen and (max-width: @screen-xs-max) { // 767px
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 0;
+        }
+        &:last-child {
+            text-align: left;
+        }
+        @media screen and (min-width: @screen-sm) { // 768px and up
+            width: 110px;
+        }
+        @media screen and (min-width: @screen-md) { // 992px and up
+            width: 130px;
+        }
+        @media screen and (min-width: 1025px) {
+            width: 160px;
+        }
+        @media screen and (min-width: @screen-lg) { // 1200px and up
+            width: 250px;
+        }
+    }
+    // Column containing message body
+    & > tbody > tr > td {
+        @media only screen and (max-width: @screen-xs-max) { // 767px
+            border: none;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        &:last-child {
+            text-align: left;
+        }
+        @media screen and (min-width: @screen-sm) { // 768px and up
+            position: relative;
+            .table--notifications__message {
+                display: block;
+                margin-right: 145px;
+            }
+            // Message date
+            .table--notifications__timestamp {
+                position: absolute;
+                top: 8px;
+                right: 0;
+                width: 140px;
+                text-align: right;
+                margin-right: 0;
+            }
+            // Inner table
+            .notification-cell-date,
+            .notification-cell-number {
+                text-align: right;
+            }
+        }
+    }
+
+    // Highlight the clicked row to look like the hover state of the dropdown.
+    tr.highlight {
+        color: #262626;
+        background-color: #f5f5f5;
+    }
+}
+
+// Tables outputted from the API
+.table-responsive--restructure--full-width table.table--notifications {
+    table {
+        @media only screen and (max-width: @screen-xs-max) { // 767px
+            border-top: 1px solid #eee !important;
+            margin-top: 10px;
+        }
+        color: #888;
+        margin-top: 5px;
+        thead {
+            th {
+                border: none;
+            }
+            th,
+            td {
+                padding-left: 0;
+                padding-right: 15px;
+            }
+        }
+        tbody {
+            th,
+            td {
+                padding-left: 0;
+                padding-right: 15px;
+            }
+            tr:last-child {
+                td:last-child {
+                    @media only screen and (max-width: @screen-xs-max) { // 767px
+                        border-bottom: none;
+                        padding-bottom: 2px;
+                    }
+                }
+            }
+        }
+    }
+}
