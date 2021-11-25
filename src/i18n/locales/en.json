@@ -1,0 +1,806 @@
+{
+  "general": {
+    "loggedOut": "You have been successfully logged out.",
+    "loading": "Loading",
+    "apply": "Apply",
+    "close": "Close",
+    "edit": "Edit",
+    "save": "Save",
+    "saving": "Saving...",
+    "cancel": "Cancel",
+    "remove": "Remove",
+    "delete": "Delete",
+    "move": "Move",
+    "download": "Download",
+    "share": "Share",
+    "yes": "Yes",
+    "no": "No",
+    "search": "Search",
+    "name": "Name",
+    "description": "Description",
+    "add": "Add",
+    "records": "Records",
+    "recordsBetween": "{{ first | momentDevice:'L' }} - {{ last | momentDevice:'L' }}",
+    "recordsFrom": "{{ first | momentDevice:'L' }} onwards",
+    "copyright": "&copy; Delta-T Devices Ltd - All Rights Reserved",
+    "lastModified": "Last modified",
+    "shareLinkHelp": "Copy the URL in the box above so you can share it with others.",
+    "datasets": "Datasets",
+    "preview": "Preview",
+    "tokenCount": "Tokens:"
+  },
+  "errors": {
+    "invalidOrExpiredSession": "You have been logged out due to an invalid or expired session.",
+    "unknownError": "Unknown error.",
+    "timeoutError": "Connection timed out.",
+    "pageNotFound": "Page not found."
+  },
+  "networkError": {
+    "errNetworkFailed": "We can't seem to connect right now",
+    "errNetworkFailedBody": "Please wait while we try to re-establish a connection"
+  },
+  "apiErrors": {
+    "// Controller messages": "",
+    "nothingFound": "No content found.",
+    "notAuthorisedForEdit": "Not authorised to modify resource.",
+    "// Account message": "",
+    "accountTandCsNotAccepted": "The terms and condition have not been accepted.",
+    "accountEmailDuplicate": "Email '{{ user.email }}' is already taken.",
+    "accountPasswordTooShort": "Passwords must be at least 8 characters.",
+    "// Gateway messages": "",
+    "gatewayAlreadyRegistered": "Gateway already registered.",
+    "gatewayInvalidAccessCode": "Invalid gateway access code.",
+    "gatewayInvalidTime": "Invalid time format or value.",
+    "gatewayInvalidTimeZone": "Invalid time zone.",
+    "gatewayInvalidDaysOfWeek": "No or invalid days of week.",
+    "gatewayInvalidRepeatRate": "Invalid repeat rate.",
+    "// Logger messages": "",
+    "loggerAlreadyRegistered": "Logger already registered on a different account.",
+    "loggerOnMyGateway": "Logger already registered on my gateway.",
+    "loggerOnThisGateway": "Logger already on this gateway.",
+    "loggerInvalidSerialNumber": "Invalid logger serial number.",
+    "// Report messages": "",
+    "reportTokenNotValid": "Report token is not valid.",
+    "reportSeriesIdentifierInvalid": "Both the datseries ID and the RoseName are null or defined. One and only one should be defined.",
+    "// Gateway State": "",
+    "gatewayRegistered": "Gateway is registered (by a user), but has not yet contacted the server.",
+    "gatewayExistsAndProblem": "Gateway is registered, but has problems.",
+    "gatewayExistsAndOK": "Gateway is registered and operating as expected.",
+    "gatewayProblemMissedLastConnect": "Gateway did not contact the server when last expected.",
+    "gatewayProblemSignalLow": "Signal strength is low.",
+    "gatewayProblemSIMDataLimitReached": "The data limit on this SIM has been reached. Contact Delta-T sales.",
+    "// Logger State": "",
+    "loggerRegistered": "Logger is registered (by a user), but has not yet contacted the server.",
+    "loggerExistsAndProblem": "Logger is registered, but has problems.",
+    "loggerExistsAndOK": "Logger is registered and operating as expected.",
+    "loggerProblemNotContactable": "Logger is not responding to gateway.",
+    "loggerProblemHasErrors": "Logger has internal errors. See the status page.",
+    "loggerProblemLowPower": "Logger's power is low."
+  },
+  "loggerErrorTypes": {
+    "SysUnknown": "Unexpected error",
+    "SysWatchdo": "Watchdog timeout",
+    "SysRTC": "Clock checksum error",
+    "SysDataset": "Data checksum error",
+    "SysSystemError": "Error log error",
+    "SysResetFailed": "Reset failed",
+    "SysPowerup": "Power up",
+    "SysButto": "Warm reset",
+    "SysStuck": "Reset button stuck",
+    "SysPwrGone": "Power low",
+    "SysFlashWrit": "Data write failed",
+    "SysFullDataset": "Dataset full",
+    "SysOverrun": "Program over run",
+    "SysRepaire": "Error log erased",
+    "SysNotLoggin": "Illegal data write",
+    "SysDatawrite": "Data write error",
+    "SysRTCRepair": "Clock corrected",
+    "SysFlashEras": "Data erase failed",
+    "SysInvalidData": "Damaged dataset",
+    "SenOverrange": "Over range",
+    "SenUnderrang": "Under range",
+    "SenTimeout": "Timed out",
+    "SenWarmu": "Warmup too short",
+    "SenPower": "Power collapsed during warmup",
+    "SenZer": "Auto zero error",
+    "SenCal": "Calibration error",
+    "SenLicense": "Unsupported feature",
+    "SenNoisy": "Noisy",
+    "SenNoSenso": "No sensor",
+    "SenNaN": "NaN returned"
+  },
+  "topNav": {
+    "logOut": "Log out",
+    "help": "Help",
+    "goToMainSite": "Go to main site"
+  },
+  "datetimeIcon": {
+    "userTooltip": "Date/Time is relative to the browser's time-zone.",
+    "deviceTooltip": "Date/Time is shown as recorded in the device (i.e. no conversion)."
+  },
+  "auth": {
+    "general": {
+      "strapline": "A free, secure cloud-based service from Delta-T. Collect, view and share your data with ease. Anywhere. Anytime.",
+      "viewTerms": "View Terms and Conditions",
+      "email": "Email",
+      "password": "Password"
+    },
+    "login": {
+      "header": "Connect, store and share sensor data",
+      "logIn": "Log in",
+      "registerHeader": "To register, please",
+      "registerButton": "Create an account",
+      "emailOrPasswordIncorrect": "Your email address or password is incorrect, please try again.",
+      "forgottenYourPassword": "Forgotten your password?"
+    },
+    "forgottenPassword": {
+      "header": "Reset your password",
+      "strapline": "Enter your email address below and we'll send you a link with instructions.",
+      "resetPasswordButton": "Reset your password",
+      "submitted": "We've sent an email to {{ email }} with instructions on how to reset your password."
+    },
+    "setPassword": {
+      "header": "Set new password",
+      "strapline": "",
+      "setPasswordButton": "Set new password",
+      "success": "Your password has been successfully reset."
+    },
+    "register": {
+      "header": "Register for DeltaLINK-Cloud",
+      "firstName": "First name",
+      "firstNameInvalid": "Please enter your first name.",
+      "lastName": "Last name",
+      "lastNameInvalid": "Please enter your last name.",
+      "emailHelp": "Notifications will be sent to this email address.",
+      "emailInvalid": "Please enter a valid email address.",
+      "passwordInvalid": "Passwords must be at least 8 characters long.",
+      "confirmPassword": "Confirm password",
+      "confirmPasswordInvalid": "Your passwords do not match.",
+      "phoneNumber": "Phone number",
+      "phoneNumberHelp": "+44 7707 123456",
+      "phoneNumberInvalid": "Please enter a valid phone number.",
+      "acceptTerms": "Accept Terms and Conditions",
+      "acceptTermsInvalid": "You must accept the terms and conditions.",
+      "registerButton": "Register",
+      "loginHeader": "If you already have an account, please",
+      "loginButton": "Log in",
+      "accountCreated": "Your account has been created. An email has been sent to your email address to verify your account.",
+      "failedToLogin": "Failed to log in."
+    }
+  },
+  "notifications": {
+    "name": "All messages",
+    "greeting": "Messages",
+    "readAllMessages": "Read all messages"
+  },
+  "welcome": {
+    "name": "Home",
+    "greeting": "Welcome to DeltaLINK-Cloud"
+  },
+  "manageDevices": {
+    "name": "Manage devices",
+    "loading": "Loading devices...",
+    "addGatewayButton": "Add gateway",
+    "addGatewaySuccess": "Successfully created gateway \"{{ gateway.name }}\" ({{ gateway.serialNo }}).",
+    "settingsButton": "Settings / Status",
+    "viewDatasetButton": "View dataset",
+    "loggingBetween": "Logging between",
+    "loggingBetweenValues": "{{ first | momentDevice:'L' }} and {{ last | momentDevice:'L' }}",
+    "addLoggerButton": "Add logger",
+    "addLoggerSuccess": "Successfully created logger \"{{ logger.name }}\" ({{ logger.serialNo }}).",
+    "addLogger": {
+      "addLoggerTitle": "Add logger",
+      "editLoggerTitle": "Edit logger",
+      "namePlaceholder": "Give your logger a name",
+      "nameInvalid": "You must supply a logger name.",
+      "descriptionPlaceholder": "Tell us a bit about your logger",
+      "loggerType": "Logger type",
+      "loggerTypeInvalid": "You must supply a logger type.",
+      "loggerTypes": {
+        "gp2": "GP2",
+        "gp1": "GP1",
+        "dl6": "DL6",
+        "sg2": "Simulator - GP2",
+        "sg1": "Simulator - GP1",
+        "sd6": "Simulator - DL6"
+      },
+      "productInfo": "(Product info)",
+      "serialNumber": "Serial number",
+      "serialNumberHelp": "e.g. GP1-01-254",
+      "serialNumberInvalid": "You must supply a valid serial number.",
+      "moveLoggerTitle": "Move logger?",
+      "moveLoggerExplanation": "Logger \"{{ logger.name }}\" ({{ logger.serialNo }}) already exists on a gateway within your account. Do you want to move it?"
+    },
+    "addGateway": {
+      "addGatewayTitle": "Add gateway",
+      "editGatewayTitle": "Edit gateway",
+      "namePlaceholder": "Give your gateway a name",
+      "nameInvalid": "You must supply a gateway name.",
+      "descriptionPlaceholder": "Tell us a bit about your gateway",
+      "gatewayType": "Gateway type",
+      "gatewayTypeInvalid": "You must supply a gateway type.",
+      "gatewayTypes": {
+        "gprs": "2G Modem Gateway (FXT009)",
+        "3g": "3G Modem Gateway (FX30)",
+        "user": "User Gateway"
+      },
+      "serialNumber": "Serial number",
+      "serialNumberHelp": "BH1234567890123",
+      "serialNumberHelp3G": "LL012345678901",
+      "serialNumberHelpUser": "UG1234567",
+      "serialNumberInvalid": "You must supply a valid serial number.",
+      "accessCode": "Access code",
+      "accessCodeHelp": "ABC12DEF45",
+      "accessCodeInvalid": "You must supply a valid access code."
+    },
+    "viewGateway": {
+      "name": "View gateway",
+      "editGatewayButton": "Edit gateway",
+      "editGatewayFailure": "Failed to update gateway.",
+      "removeGatewayButton": "Remove gateway",
+      "removeGatewayTitle": "Remove gateway",
+      "removeGatewayConfirmation": "Are you sure you want to remove your gateway \"{{ gateway.name }}\" ({{ gateway.serialNo }})?",
+      "removeGatewayExplanation": "Removing a gateway will disconnect it from your account. All associated loggers will also be removed. Current \"logging\" datasets associated with the attached loggers will also be removed from your account, but any archived datasets will remain. Once removed, loggers and gateways can be re-registered to your or someone else's account without having lost any data.",
+      "removeGatewaySuccess": "Successfully removed gateway \"{{ gateway.name }}\" ({{ gateway.serialNo }}).",
+      "removeGatewayFailure": "Failed to remove gateway.",
+      "gatewayStatus": "Gateway status",
+      "dataSync": "Data sync",
+      "currentSettings": "Current settings",
+      "pendingSettings": "Pending settings",
+      "hasPendingSettings": "You currently have pending settings",
+      "awaitingFirstConnect": "Awaiting first connect",
+      "viewSettingsButton": "View settings",
+      "editSettingsButton": "Edit settings",
+      "dataSyncsOn": "Your data syncs on",
+      "syncDataOn": "Sync data on",
+      "editDataSyncSettings": "Edit data sync settings",
+      "pendingSettingsNone": "You currently have no pending settings.",
+      "pendingSettingsAppliedNextConnect": "Pending settings will be applied at the next connect",
+      "tunnelConnectButton": "Connect now",
+      "tunnelDescription": "Use this connection for DeltaLINK to communicate directly with your attached loggers.",
+      "tunnelPanelHeading": "Create connection for DeltaLINK",
+      "tunnelStatus": "Status:",
+      "tunnelPanelText": "Use this code when creating a new 'DeltaLINK-Cloud Gateway' connection in DeltaLINK 3.5+",
+      "tunnelPanelPINText": "Copy the PIN code in the box above",
+      "tunnelDisconnect": "Disconnect",
+      "tunnelConnectedFor": "Connection active for {{ secondsActive | momentSecondsFromNow }}",
+      "tunnelStatuses": {
+        "connected": "Connected",
+        "connecting": "Trying to connect",
+        "disconnected": "Disconnected"
+      }
+    },
+    "viewLogger": {
+      "name": "View logger",
+      "editLoggerButton": "Edit logger",
+      "editLoggerFailure": "Failed to update logger.",
+      "removeLoggerButton": "Remove logger",
+      "removeLoggerTitle": "Remove logger",
+      "removeLoggerConfirmation": "Are you sure you want to remove your logger \"{{ logger.name }}\" ({{ logger.serialNo }})?",
+      "removeLoggerExplanation": "Removing a logger will disconnect it from your account and gateway. Current \"logging\" datasets associated with the removed logger will also be removed from your account, but any archived datasets will remain. Once removed, loggers can be re-registered to your or someone else's account/gateway without having lost any data. The current/logging dataset will move with the logger to the new accounts.",
+      "removeLoggerSuccess": "Successfully removed logger \"{{ logger.name }}\" ({{ logger.serialNo }}).",
+      "removeLoggerFailure": "Failed to remove logger.",
+      "loggerStatus": "Logger status",
+      "loggerErrors": {
+        "title": "Logger errors",
+        "fromLabel": "From",
+        "toLabel": "To",
+        "defaultErrorType": "Unknown error",
+        "noErrors": "No errors detected."
+      }
+    },
+    "gatewayScheduleSettings": {
+      "from": "From",
+      "to": "To",
+      "in": "In",
+      "repeatEvery": "Repeat every",
+      "updateSuccess": "Your settings have been updated and are now pending.",
+      "repeatRates": {
+        "15Mins": "15 minutes",
+        "30Mins": "30 minutes",
+        "1Hour": "hour",
+        "3Hours": "3 hours",
+        "6Hours": "6 hours",
+        "12Hours": "12 hours",
+        "1Day": "day"
+      }
+    }
+  },
+  "datasets": {
+    "name": "Datasets",
+    "loading": "Loading datasets...",
+    "filterBy": "Filter by",
+    "status": "Status",
+    "datasetName": "Dataset name",
+    "datasetNameShort": "Name",
+    "device": "Device",
+    "lastSync": "Last sync",
+    "viewDataButton": "View data"
+  },
+  "reports": {
+    "name": "Reports",
+    "loading": "Loading reports...",
+    "report": "Report",
+    "viewReportButton": "View report",
+    "deleteReport": "Delete {{ reportName }}",
+    "deleteReportTitle": "Delete report",
+    "deleteReportConfirmation": "Are you sure you want to delete report \"{{ report.name }}\"?",
+    "deleteReportExplanation": "This report will be permanently removed and any shared links to it will no longer work.",
+    "deleteReportSuccess": "Successfully deleted report \"{{ report.name }}\".",
+    "viewReport": {
+      "name": "View report",
+      "loading": "Loading report...",
+      "loadDraftFailure": "Failed to load draft report!",
+      "generatedName": "Report of {{ dataset.name }}",
+      "generatedDescription": "Automatically generated report for '{{ dataset.name }}'.",
+      "shareButton": "Share report",
+      "downloadButton": "Download as CSV",
+      "editButton": "Edit report",
+      "saveButton": "Save report",
+      "saveReportFailure": "Failed to save report!",
+      "saveButtonSaving": "Saving&hellip;",
+      "saveReportSuccess": "Saved report \"{{ report.name }}\".",
+      "createReportSuccess": "Created report \"{{ report.name }}\".",
+      "modifiedOn": "Modified on",
+      "dateRange": "Date range",
+      "records": "Records",
+      "onwards": "onwards",
+      "datasetsInReport": "Datasets in this report",
+      "removeDataset": "Remove {{ datasetName }}",
+      "removeDatasetTitle": "Remove dataset",
+      "removeDatasetConfirmation": "Are you sure you want to remove dataset \"{{ dataset.name }}\"?",
+      "removeDatasetExplanation": "Removing a dataset will remove all associated data series from the charts.",
+      "removeDatasetSuccess": "Dataset removed.",
+      "addDatasetButton": "Add dataset",
+      "editTitleDescriptionButton": "Title and description",
+      "editDataseriesButton": "Dataseries",
+      "editChartButton": "Edit",
+      "addChartButton": "Add new chart",
+      "createChartSuccess": "Chart created",
+      "deleteChartSuccess": "Chart deleted",
+      "resetZoom": "All",
+      "editReport": {
+        "saveReportTitle": "Save report",
+        "editReportTitle": "Edit report",
+        "namePlaceholder": "Report name",
+        "nameInvalid": "You must supply a report name.",
+        "descriptionPlaceholder": "Report description"
+      },
+      "renameChart": {
+        "renameChartTitle": "Chart title and description",
+        "namePlaceholder": "Chart name",
+        "nameInvalid": "You must supply a chart name.",
+        "descriptionPlaceholder": "Chart description"
+      },
+      "downloadReport": {
+        "name": "Download as CSV",
+        "chooseDateRange": "Choose a date range to download",
+        "dateRangeTo": "to",
+        "dateRangeInvalid": "Please enter valid date and time values (e.g. 2015/01/31 13:00:00)",
+        "chooseDecimalChar": "Choose a decimal place character",
+        "decimalCharOptions": {
+          "full-stop": "\".\" (eg 1.23)",
+          "comma": "\",\" (eg 1,23)",
+          "quote": "\"'\" (eg 1'23)"
+        },
+        "chooseSeparatorChar": "Choose a separator character",
+        "separatorCharOptions": {
+          "comma": "\",\" (Comma)",
+          "tab": "\"\\t\" (Tab)",
+          "semi-colon": "\";\" (Semi-colon)",
+          "space": "\" \" (Whitespace)"
+        },
+        "downloadButton": "Download"
+      },
+      "shareReport": {
+        "name": "Share report",
+        "loading": "Loading link...",
+        "linkHeader": "Here is your public URL for \"{{ reportName }}\"",
+        "downloadButton": "Allow data download",
+        "previewButton": "Preview",
+        "includeAutoZoom": "Auto-zoom report",
+        "chooseZoomType": "Choose auto-zoom type",
+        "mostRecentZoom": "To the most recent",
+        "zoomConfiguration": "Auto-zoom settings",
+        "fixedRangeZoom": "To a fixed date range",
+        "mostRecentLabel": "Zoom to the most recent",
+        "timeframeCode": {
+          "day": "day",
+          "week": "week",
+          "month": "month",
+          "year": "year"
+        }
+      },
+      "timespan": {
+        "pre": "Zoom",
+        "day": "1 day",
+        "dayShort": "1d",
+        "week": "1 week",
+        "weekShort": "1w",
+        "month": "1 month",
+        "monthShort": "1m",
+        "threeMonth": "3 months",
+        "threeMonthShort": "3m",
+        "year": "1 year",
+        "yearShort": "1y"
+      }
+    },
+    "editDataseries": {
+      "name": "Edit dataseries",
+      "heading": "Edit dataseries in {{ chart.name }} ({{ report.name }})",
+      "binarySeriesLimitFailure": "You cannot have more than {{ limit }} binary series per chart."
+    },
+    "addDataset": {
+      "name": "Add datasets",
+      "heading": "Add datasets to {{ report.name }}",
+      "addDatasetButton": "Add dataset",
+      "addDatasetSuccess": "Changes applied"
+    }
+  },
+  "devices": {
+    "states": {
+      "unknown": "Unknown",
+      "pending": "Pending",
+      "problem": "Problem",
+      "confirmed": "Confirmed",
+      "1": "Pending",
+      "2": "Problem",
+      "3": "Confirmed"
+    },
+    "statuses": {
+      "Calibrated": "Calibrated",
+      "Clock": "Clock",
+      "Current network": "Current network",
+      "Dataset full": "Dataset full",
+      "Dataset valid": "Dataset valid",
+      "Firmware Version": "Firmware version",
+      "First record": "First record",
+      "FW Version": "FW Version",
+      "Last connected": "Last connected",
+      "Last expected": "Last expected",
+      "Last record": "Last record",
+      "Last updated": "Last updated",
+      "Location": "Location",
+      "Logging": "Logging",
+      "Next connect": "Next connect",
+      "Power": "Power",
+      "Program name": "Program name",
+      "Program valid": "Program valid",
+      "Serial number": "Serial number",
+      "Signal Strength": "Signal strength",
+      "State reasons": "State reasons",
+      "State": "State",
+      "Type": "Type",
+      "Gateway Type": "Gateway type"
+    },
+    "gateway": {
+      "signalStrengthStates": {
+        "bad": "Bad",
+        "ok": "OK",
+        "good": "Good"
+      },
+      "signalStrengthValues": {
+        "dBm": "{{ value }} dBm",
+        "%": "{{ value }}%"
+      },
+      "locationValues": {
+        "lat": "Lat: {{ value }}",
+        "long": "Long: {{ value }}",
+        "accuracy": "Accuracy: {{ value }}m"
+      },
+      "types": {
+        "gprs": "2G Modem Gateway (FXT009)",
+        "3g": "3G Modem Gateway (FX30)",
+        "user": "User Gateway"
+      }
+    },
+    "logger": {
+      "loggingStatus": "Logging status",
+      "loggingStatuses": {
+        "logging": "Logging",
+        "stopped": "Stopped",
+        "archived": "Archived",
+        "imported": "Imported",
+        "example": "Example"
+      },
+      "powerStates": {
+        "low": "Low",
+        "ok": "OK"
+      }
+    }
+  },
+  "dashboards": {
+    "name": "Dashboards",
+    "singleName": "Dashboard",
+    "loading": "Loading dashboard...",
+    "loadingList": "Loading dashboards...",
+    "viewButton": "View dashboard",
+    "addButton": "Add dashboard",
+    "withLastUpdated": "Last updated: {{ lastUpdated }}",
+    "withoutLastUpdated": "Last updated: -",
+    "deleteTitle": "Delete dashboard",
+    "deleteConfirmation": "Permanently delete dashboard \"{{ dashboard.name }}\"?",
+    "deleteExplanation": "Your data will still be available, but shared links will no longer work.",
+    "deleteSuccess": "Successfully deleted dashboard \"{{ dashboard.name }}\".",
+    "addWidgetButton": "Add widget",
+    "new": {
+      "name": "New Dashboard",
+      "description": "Add widgets and save this dashboard in order to keep it"
+    },
+    "view": {
+      "saveButton": "Save",
+      "saveButtonSaving": "Saving...",
+      "editButton": "Edit",
+      "shareButton": "Share",
+      "widgetEditButton": "Edit",
+      "widgetDeleteButton": "Delete",
+      "edit": {
+        "title": "Edit dashboard",
+        "namePlaceholder": "Dashboard name",
+        "descriptionPlaceholder": "Dashboard description",
+        "nameInvalid": "You must supply a dashboard name"
+      },
+      "share": {
+        "title": "Share dashboard",
+        "loading": "Loading link...",
+        "linkHeader": "Here is your public URL for \"{{ name }}\"",
+        "previewButton": "Preview"
+      }
+    },
+    "addWidget": {
+      "name": "Add widget",
+      "chooseType": "Choose a widget",
+      "title": "Title",
+      "subtitle": "Sub-title",
+      "types": {
+        "gauge": {
+          "name": "Gauge",
+          "intro": "Show the current status of a measurement."
+        },
+        "line": {
+          "name": "Line Chart",
+          "intro": "See the history of a measurment over a period."
+        },
+        "textData": {
+          "name": "Text from a dataset",
+          "intro": "Show data as text. e.g. ON/OFF."
+        },
+        "textHistory": {
+          "name": "Text with history",
+          "intro": "Show data as text, including the last 3 changes."
+        },
+        "textStatic": {
+          "name": "Static text",
+          "intro": "Display some static text.",
+          "placeholderText": "Text"
+        },
+        "windRose": {
+          "name": "Wind Rose",
+          "intro": "Display wind (including class roses) data over a period."
+        }
+      }
+    },
+    "editWidget": {
+      "title": "Edit widget",
+      "loading": "Loading…",
+      "pleaseSelect": "Please select…",
+      "summary": {
+        "title": "Summary",
+        "dataset": "Dataset",
+        "dataseries": "Dataseries",
+        "thresholdSummary": "If %1$s is greater or equal to %2$s then change color to %3$s"
+      },
+      "tabs": {
+        "dataSource": "Data source",
+        "thresholds": "Thresholds",
+        "properties": "Properties"
+      },
+      "dataset": {
+        "label": "Dataset",
+        "invalid": "You must select a dataset"
+      },
+      "dataseries": {
+        "label": "Dataseries",
+        "invalid": "You must select a dataseries"
+      },
+      "timeSpan": {
+        "__comment": "This is only used for line chart widgets",
+        "label": "Time Span",
+        "invalid": "You must select a time span",
+        "periods": {
+          "1hr": "1 Hour",
+          "4hrs": "4 Hours",
+          "12hrs": "12 Hours",
+          "1day": "1 Day",
+          "2days": "2 Days",
+          "3days": "3 Days",
+          "1week": "1 Week",
+          "2weeks": "2 Weeks",
+          "4weeks": "4 Weeks",
+          "8weeks": "8 Weeks",
+          "6months": "6 Months",
+          "1year": "1 Year"
+        }
+      },
+      "thresholds": {
+        "leadIn": "If <strong>{{ name }}</strong> is greater or equal to",
+        "or": "or",
+        "leadOut": "then change colour to"
+      },
+      "text": {
+        "label": "Text",
+        "invalid": "You must enter some widget text"
+      },
+      "header": {
+        "__comment": "Header is the internal property name, but we show it to the user as title",
+        "label": "Title",
+        "placeholder": "Widget title",
+        "invalid": "You must enter a widget title"
+      },
+      "name": {
+        "__comment": "Name is the internal property name, shown as subtitle to users",
+        "label": "Subtitle",
+        "placeholder": "Widget subtitle",
+        "invalid": "You must enter a widget subtitle"
+      },
+      "color": {
+        "label": "Color",
+        "placeholder": "Widget color",
+        "invalid": "You must select a widget color",
+        "lineChartWidgetHelp": "Note: this color is only used when the value is outside the range of thresholds"
+      },
+      "minimum": {
+        "label": "Minimum",
+        "placeholder": "0",
+        "invalid": "Please enter a valid number, if you have set a maximum, please ensure it is higher than this value"
+      },
+      "maximum": {
+        "label": "Maximum",
+        "placeholder": "0",
+        "invalid": "Please enter a valid number, if you have set a minimum, please ensure it is lower than this value"
+      }
+    },
+    "deleteWidget": {
+      "title": "Delete widget",
+      "confirmation": "Permanently delete widget \"{{ widget.name }}\"?",
+      "explanation": "Your data will still be available, but the widget will be removed from this dashboard."
+    }
+  },
+  "highcharts": {
+    "contextButtonTitle": "Chart context menu",
+    "decimalPoint": ".",
+    "downloadJPEG": "Download JPEG image",
+    "downloadPDF": "Download PDF document",
+    "downloadPNG": "Download PNG image",
+    "downloadSVG": "Download SVG vector image",
+    "loading": "Loading...",
+    "months": "January_February_March_April_May_June_July_August_September_October_November_December",
+    "shortMonths": "Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec",
+    "numericSymbols": "k_M_G_T_P_E",
+    "printChart": "Print chart",
+    "resetZoom": "Reset zoom",
+    "resetZoomTitle": "Reset zoom level 1:1",
+    "thousandsSep": " ",
+    "weekdays": "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday"
+  },
+  "weekdays": {
+    "sunday": "Sunday",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday"
+  },
+  "shortWeekdays": {
+    "sunday": "S",
+    "monday": "M",
+    "tuesday": "T",
+    "wednesday": "W",
+    "thursday": "T",
+    "friday": "F",
+    "saturday": "S"
+  },
+  "timezones": {
+    "Etc/GMT+12": "(UTC-12:00) International Date Line West",
+    "Etc/GMT+11": "(UTC-11:00) Coordinated Universal Time-11",
+    "Pacific/Honolulu": "(UTC-10:00) Hawaii",
+    "America/Anchorage": "(UTC-09:00) Alaska",
+    "America/Santa_Isabel": "(UTC-08:00) Baja California",
+    "America/Los_Angeles": "(UTC-08:00) Pacific Time (US & Canada)",
+    "America/Phoenix": "(UTC-07:00) Arizona",
+    "America/Chihuahua": "(UTC-07:00) Chihuahua, La Paz, Mazatlan",
+    "America/Denver": "(UTC-07:00) Mountain Time (US & Canada)",
+    "America/Guatemala": "(UTC-06:00) Central America",
+    "America/Chicago": "(UTC-06:00) Central Time (US & Canada)",
+    "America/Mexico_City": "(UTC-06:00) Guadalajara, Mexico City, Monterrey",
+    "America/Regina": "(UTC-06:00) Saskatchewan",
+    "America/Bogota": "(UTC-05:00) Bogota, Lima, Quito, Rio Branco",
+    "America/New_York": "(UTC-05:00) Eastern Time (US & Canada)",
+    "America/Indiana/Indianapolis": "(UTC-05:00) Indiana (East)",
+    "America/Caracas": "(UTC-04:30) Caracas",
+    "America/Asuncion": "(UTC-04:00) Asuncion",
+    "America/Halifax": "(UTC-04:00) Atlantic Time (Canada)",
+    "America/Cuiaba": "(UTC-04:00) Cuiaba",
+    "America/La_Paz": "(UTC-04:00) Georgetown, La Paz, Manaus, San Juan",
+    "America/St_Johns": "(UTC-03:30) Newfoundland",
+    "America/Sao_Paulo": "(UTC-03:00) Brasilia",
+    "America/Argentina/Buenos_Aires": "(UTC-03:00) Buenos Aires",
+    "America/Cayenne": "(UTC-03:00) Cayenne, Fortaleza",
+    "America/Godthab": "(UTC-03:00) Greenland",
+    "America/Montevideo": "(UTC-03:00) Montevideo",
+    "America/Bahia": "(UTC-03:00) Salvador",
+    "America/Santiago": "(UTC-03:00) Santiago",
+    "Etc/GMT+2": "(UTC-02:00) Coordinated Universal Time-02",
+    "Atlantic/Azores": "(UTC-01:00) Azores",
+    "Atlantic/Cape_Verde": "(UTC-01:00) Cabo Verde Is.",
+    "Africa/Casablanca": "(UTC) Casablanca",
+    "Etc/UTC": "(UTC) Coordinated Universal Time",
+    "Europe/London": "(UTC) Dublin, Edinburgh, Lisbon, London",
+    "Atlantic/Reykjavik": "(UTC) Monrovia, Reykjavik",
+    "Europe/Berlin": "(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna",
+    "Europe/Budapest": "(UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague",
+    "Europe/Paris": "(UTC+01:00) Brussels, Copenhagen, Madrid, Paris",
+    "Europe/Warsaw": "(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb",
+    "Africa/Lagos": "(UTC+01:00) West Central Africa",
+    "Africa/Windhoek": "(UTC+01:00) Windhoek",
+    "Asia/Amman": "(UTC+02:00) Amman",
+    "Europe/Bucharest": "(UTC+02:00) Athens, Bucharest",
+    "Asia/Beirut": "(UTC+02:00) Beirut",
+    "Africa/Cairo": "(UTC+02:00) Cairo",
+    "Asia/Damascus": "(UTC+02:00) Damascus",
+    "Africa/Johannesburg": "(UTC+02:00) Harare, Pretoria",
+    "Europe/Kiev": "(UTC+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius",
+    "Europe/Istanbul": "(UTC+02:00) Istanbul",
+    "Asia/Jerusalem": "(UTC+02:00) Jerusalem",
+    "Europe/Kaliningrad": "(UTC+02:00) Kaliningrad (RTZ 1)",
+    "Africa/Tripoli": "(UTC+02:00) Tripoli",
+    "Asia/Baghdad": "(UTC+03:00) Baghdad",
+    "Asia/Riyadh": "(UTC+03:00) Kuwait, Riyadh",
+    "Europe/Moscow": "(UTC+03:00) Moscow, St. Petersburg, Volgograd (RTZ 2)",
+    "Africa/Nairobi": "(UTC+03:00) Nairobi",
+    "Asia/Tehran": "(UTC+03:30) Tehran",
+    "Asia/Dubai": "(UTC+04:00) Abu Dhabi, Muscat",
+    "Asia/Baku": "(UTC+04:00) Baku",
+    "Indian/Mauritius": "(UTC+04:00) Port Louis",
+    "Asia/Tbilisi": "(UTC+04:00) Tbilisi",
+    "Asia/Yerevan": "(UTC+04:00) Yerevan",
+    "Asia/Kabul": "(UTC+04:30) Kabul",
+    "Asia/Tashkent": "(UTC+05:00) Ashgabat, Tashkent",
+    "Asia/Yekaterinburg": "(UTC+05:00) Ekaterinburg (RTZ 4)",
+    "Asia/Karachi": "(UTC+05:00) Islamabad, Karachi",
+    "Asia/Kolkata": "(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi",
+    "Asia/Colombo": "(UTC+05:30) Sri Jayawardenepura",
+    "Asia/Kathmandu": "(UTC+05:45) Kathmandu",
+    "Asia/Almaty": "(UTC+06:00) Astana",
+    "Asia/Dhaka": "(UTC+06:00) Dhaka",
+    "Asia/Novosibirsk": "(UTC+06:00) Novosibirsk (RTZ 5)",
+    "Asia/Rangoon": "(UTC+06:30) Yangon (Rangoon)",
+    "Asia/Bangkok": "(UTC+07:00) Bangkok, Hanoi, Jakarta",
+    "Asia/Krasnoyarsk": "(UTC+07:00) Krasnoyarsk (RTZ 6)",
+    "Asia/Shanghai": "(UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi",
+    "Asia/Irkutsk": "(UTC+08:00) Irkutsk (RTZ 7)",
+    "Asia/Singapore": "(UTC+08:00) Kuala Lumpur, Singapore",
+    "Australia/Perth": "(UTC+08:00) Perth",
+    "Asia/Taipei": "(UTC+08:00) Taipei",
+    "Asia/Ulaanbaatar": "(UTC+08:00) Ulaanbaatar",
+    "Asia/Tokyo": "(UTC+09:00) Osaka, Sapporo, Tokyo",
+    "Asia/Seoul": "(UTC+09:00) Seoul",
+    "Asia/Yakutsk": "(UTC+09:00) Yakutsk (RTZ 8)",
+    "Australia/Adelaide": "(UTC+09:30) Adelaide",
+    "Australia/Darwin": "(UTC+09:30) Darwin",
+    "Australia/Brisbane": "(UTC+10:00) Brisbane",
+    "Australia/Sydney": "(UTC+10:00) Canberra, Melbourne, Sydney",
+    "Pacific/Port_Moresby": "(UTC+10:00) Guam, Port Moresby",
+    "Australia/Hobart": "(UTC+10:00) Hobart",
+    "Asia/Magadan": "(UTC+10:00) Magadan",
+    "Asia/Vladivostok": "(UTC+10:00) Vladivostok, Magadan (RTZ 9)",
+    "Pacific/Guadalcanal": "(UTC+11:00) Solomon Is., New Caledonia",
+    "Pacific/Auckland": "(UTC+12:00) Auckland, Wellington",
+    "Etc/GMT-12": "(UTC+12:00) Coordinated Universal Time+12",
+    "Pacific/Fiji": "(UTC+12:00) Fiji",
+    "Pacific/Tongatapu": "(UTC+13:00) Nuku'alofa",
+    "Pacific/Apia": "(UTC+13:00) Samoa",
+    "Pacific/Kiritimati": "(UTC+14:00) Kiritimati Island"
+  }
+}
