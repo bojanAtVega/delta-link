@@ -1,0 +1,22 @@
+.cg-notify-message.inspinia-notify {
+    // Notifications are done by angular-notify, which isn't correctly
+    // calculating width and left alignment
+    // So to avoid hacking into angular-notify, add a fixed width and correct
+    // left alignment here
+    // Use !important to override the inline styles added by angular-notify
+    width: 280px !important;
+    margin-left: -140px !important;
+}
+
+.cg-notify-close {
+    // Bigger hit area for mobile
+    padding: 9px 7px 9px 17px;
+}
+
+.inspinia-notify {
+    // Text wrapping if no spaces
+    .p-lg {
+        word-wrap: break-word;
+        white-space: normal;
+    }
+}

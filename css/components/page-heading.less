@@ -1,0 +1,79 @@
+.page-heading {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    .breadcrumb {
+        margin-top: 0;
+    }
+
+    .header-container {
+        position: relative;
+        width: 100%;
+        margin-bottom: -5px;
+
+        @media screen and (min-width: 768px) {
+            display: table;
+        }
+
+        .buttons,
+        .header {
+            @media screen and (min-width: 768px) {
+                float: none;
+                display: table-cell;
+                vertical-align: bottom;
+            }
+        }
+
+        .title-with-action {
+            display: block;
+
+            h2 {
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 10px;
+                word-wrap: break-word;
+            }
+
+            .edit-button {
+                display: inline-block;
+                vertical-align: middle;
+                margin: 10px 0;
+            }
+        }
+
+        .header {
+            h2 {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100%;
+                line-height: 34px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+
+                .label {
+                    vertical-align: middle;
+                    display: inline-block;
+                    margin-top: -6px;
+                    padding: 5px 8px;
+                }
+            }
+
+            p {
+                @media screen and (max-width: 767px) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        .buttons {
+            @media screen and (min-width: 767px) {
+                width: 300px;
+            }
+
+            .content-header {
+                margin-top: 10px;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

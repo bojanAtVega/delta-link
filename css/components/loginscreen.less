@@ -1,0 +1,58 @@
+.loginscreen {
+    &.middle-box {
+        position: static;
+        margin: 0px auto 0px;
+        height: auto;
+        padding-bottom: 80px;
+    }
+    h3{
+      color: #ffffff;
+    }
+    .help-block{
+      color: #bbbbbb;
+    }
+    a{
+      &.btn-link {
+        color: #bbbbbb;
+       }
+      &.btn-link:hover{
+          color: #1ab394;
+      }
+    }
+    p , label{
+      color: #dddddd;
+    }
+}
+
+.landing-bg{
+    background-image: url("../img/landing-bg.jpg");
+    background-color: #01315A;
+    @media
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and ( min--moz-device-pixel-ratio: 2),
+        only screen and ( -o-min-device-pixel-ratio: 2/1),
+        only screen and ( min-device-pixel-ratio: 2),
+        only screen and ( min-resolution: 192dpi),
+        only screen and ( min-resolution: 2dppx) {
+        background-image: url("../img/landing-bg@x2.jpg");
+    }
+
+    @media
+        only screen and (-webkit-min-device-pixel-ratio: 3),
+        only screen and ( min--moz-device-pixel-ratio: 3),
+        only screen and ( -o-min-device-pixel-ratio: 3/1),
+        only screen and ( min-device-pixel-ratio: 3),
+        only screen and ( min-resolution: 400dpi),
+        only screen and ( min-resolution: 3dppx) {
+        background-image: url("../img/landing-bg@x3.jpg");
+    }
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+.landinglogo-bg{
+   .img-retina('../img/deltat-logo.png'; '../img/deltat-logo@x2.png'; '../img/deltat-logo@x3.png'; 82px; 60px);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    height: 80px;
+}

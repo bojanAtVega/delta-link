@@ -1,0 +1,10 @@
+.iPad {
+   &.iOS7, &.iOS8 {
+        .modal {
+            // Attempt to stop iOS Safari from somehow stopping the modal from scrolling
+            @media only screen and (max-width: 1024px) and (orientation: landscape), only screen and (max-width: 1024px) and (orientation: portrait) {
+                position: absolute !important;
+            }
+        }
+    }
+}

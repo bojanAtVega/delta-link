@@ -1,0 +1,44 @@
+// Wrapper around loggers on Manage devices page
+.loggers {
+    border-top: 1px solid #e7eaec;
+    padding-top: 15px;
+    margin-top: 15px;
+    padding-top: 25px;
+}
+
+.logger__header {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.logger__title {
+    display: inline-block;
+    margin-right: 4px;
+    margin-bottom: 5px;
+    max-width: 100%;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.logger__title__text {
+    display: inline-block;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.logger__errors {
+
+    .option {
+        margin-bottom: 5px;
+    }
+
+    .option--inline {
+        display: inline-block;
+        margin: 0;
+
+        @media screen and (max-width: @screen-xs) {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,230 @@
+// Wrapper around both gateway and logger controls
+.device__controls {
+    float: right;
+    text-align: right;
+    margin-bottom: 10px;
+    @media only screen and (max-width: @screen-sm-max) {
+        float: none;
+        text-align: left;
+    }
+    .btn {
+        margin-bottom: 5px;
+        @media only screen and (max-width: @screen-xs-min) {
+            display: block;
+        }
+    }
+}
+
+// Used for the descriptions of both gateways and loggers
+.device__description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    .logger & {
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+// Confirmed/Problem/Pending
+.device__state {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    // Smaller label if inside a logger
+    .logger & {
+        padding-top: 3px;
+        padding-bottom: 3px;
+        margin-bottom: 4px;
+    }
+    // No margin if inside a status panel on a details page
+    .device__status-list & {
+        margin-bottom: 0;
+    }
+}
+
+.device__state__title {
+    text-transform: uppercase;
+}
+
+// This is the multline two-column panel on gateway and logger edit pages
+// Titles in that panel
+.device__status-list__item__title {
+    font-weight: bold;
+    float: left;
+    width: 45%;
+    margin: 0;
+}
+
+// Text (subtitles) in that panel (right column)
+.device__status-list__item__text {
+    float: right;
+    width: 55%;
+    text-align: left;
+    white-space: normal;
+    margin: 0;
+}
+
+// Signal/Connections/Power etc. on the Manage Devices page,
+// also used for Datasets status
+.device__status {
+    float: left;
+    margin-right: 25px;
+    position: relative;
+    @media only screen and (max-width: @screen-xs-min) { // 480px
+        line-height: 17px;
+    }
+    // When inside a logger:
+    .logger & {
+        margin-top: 0;
+        @media only screen and (max-width: @screen-xs-min) { // 480px
+            float: none;
+        }
+    }
+    // When inside something like the Datasets table
+    .table--sortable & {
+        font-weight: normal;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    // Inside table controls, like filtering
+    .table-responsive__controls & {
+        margin-right: 15px;
+        &:first-child {
+            @media only screen and (max-width: @screen-xs-max) { // 767px
+                float: none;
+                clear: both;
+                display: block;
+                width: 100%;
+            }
+        }
+        &.active {
+            font-weight: bold;
+        }
+    }
+    // Inside table that is laid out with display: block on mobile
+    .table-responsive--restructure__row & {
+        max-width: 100%;
+        @media only screen and (max-width: @screen-xs-max) { // 767px
+            text-align: right;
+            margin-right: 0px;
+            float: right;
+        }
+    }
+    // Inside a list, e.g. on a report
+    .list-group-item & {
+        margin: 0;
+        max-width: 100%;
+    }
+}
+
+.device__status__title {
+    .table--sortable &, .list-group-item & {
+        display: inline-block;
+        margin-left: 18px;
+    }
+    .table--sortable .device__status--no-icon &, .list-group-item .device__status--no-icon & {
+        margin-left: 0px;
+    }
+    .list-group-item & {
+        word-wrap: break-word;
+        max-width: 92%;
+    }
+    .table-responsive--restructure__row & {
+        @media only screen and (max-width: @screen-xs-max) { // 767px
+            margin-left: 0px;
+            max-width: 100%;
+        }
+    }
+}
+
+.device__status__subtitle {
+    font-weight: normal;
+}
+
+.device__status__icon {
+    position: absolute;
+    .list-group-item & {
+        top: 3px;
+    }
+    .table-responsive--restructure__row & {
+        @media only screen and (max-width: @screen-xs-max) { // 767px
+            position: static;
+        }
+    }
+}
+
+.device__status__text {
+    margin-left: 18px;
+    line-height: 17px;
+    .device__status--no-icon & {
+        margin-left: 0px;
+    }
+    display: inline-block;
+    // Modify some of these to account for thinner/wider/missing icons
+    .device__status--serial & {
+        margin-left: 0px;
+    }
+    .device__status--power & {
+        margin-left: 0px;
+    }
+    .device__status--logging & {
+        margin-left: 0px;
+    }
+    .table--sortable & {
+        display: block;
+        font-size: 12px;
+        margin-top: 3px;
+        margin-bottom: 0px;
+    }
+}
+
+// Device badges now only appear on gateway and logger edit pages, e.g. PC icon
+.device__badge {
+    margin-top: 4px;
+    margin-bottom: 12px;
+    max-width: 100%;
+    white-space: normal;
+    text-align: left;
+    position: relative;
+}
+
+.device__badge__icon {
+    position: absolute;
+    top: 4px;
+}
+
+.device__badge__text {
+    margin-left: 15px;
+    display: block;
+    line-height: 12px;
+}
+
+.device__status {
+    strong {
+        float: left;
+        width: 45%;
+    }
+    .device__badge {
+        float: right;
+        width: 55%;
+        text-align: left;
+        white-space: normal;
+        line-height: 1.3;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+.device__status-list__sub-list {
+    list-style: none;
+    float: right;
+    width: 55%;
+    text-align: left;
+    padding: 0;
+}
+
