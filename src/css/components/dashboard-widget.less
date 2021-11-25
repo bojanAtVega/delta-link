@@ -1,0 +1,253 @@
+.dashboard-widget-container {
+    border: 1px solid transparent;
+    vertical-align: top;
+    float: left;
+    width: 20%;
+    @media (max-width: 1580px) {
+        width: 25%;
+    }
+    @media (max-width: 1270px) {
+        width: 33%;
+    }
+    @media (max-width: 950px) {
+        width: 50%;
+    }
+    @media (max-width: 640px) {
+        width: 100%;
+    }
+
+    .fixed-sidebar:not(.mini-navbar) & {
+        @media (max-width: 1800px) {
+            width: 25%;
+        }
+        @media (max-width: 1490px) {
+            width: 33%;
+        }
+        @media (max-width: 1170px) {
+            width: 50%;
+        }
+        @media (max-width: 860px) {
+            width: 100%;
+        }
+    }
+}
+
+.dashboard-widget-square {
+    width: 300px;
+    .widget-preview & {
+        width: auto;
+        @media screen and (min-width: @screen-xs) { // 480px and up
+            width: 300px;
+        }
+    }
+    margin-left: auto;
+    margin-right: auto;
+
+    // This is the same as the page background, but required for the drag/drop reordering to appear correctly.
+    background: #f4f6fa;
+}
+
+.dashboard-widget-add {
+    border: 1px dashed #cecece; // #cecece would match placeholder
+    background-color: #e7eaec;
+    color: #676a6c;
+    font-size: 23px;
+    font-weight: 100;
+    line-height: 1.3333333;
+    margin-bottom: 38px;
+    margin-top: 15px;
+    height: 300px;
+    width: 300px;
+    &:before {
+        content: '\00002b'; // Plus symbol
+        margin-right: 5px;
+    }
+    .widget-preview & {
+        width: auto;
+        @media screen and (min-width: @screen-xs) { // 480px and up
+            width: 300px;
+        }
+    }
+    overflow: hidden;
+}
+
+.dashboard-widget {
+    background-color: white;
+    border: 1px solid #d3d3d3;
+    position: relative;
+    margin-top: 15px;
+    height: 300px;
+    width: 300px;
+    .widget-preview & {
+        width: auto;
+        @media screen and (min-width: @screen-xs) { // 480px and up
+            width: 300px;
+        }
+    }
+    overflow: hidden;
+
+    .btn-link {
+        font-size: 21px;
+    }
+
+    .dashboard-widget-updated {
+        font-size: 12px;
+        font-weight: 100;
+        text-align: left;
+        padding: 15px 20px 0;
+    }
+
+     .dashboard-widget-data-name {
+        font-size: 23px;
+        color: #676a6c;
+        text-align: center;
+        margin: 10px 20px 20px;
+        height: 53px;
+        overflow: hidden;
+    }
+
+    .dashboard-widget-data {
+        text-align: center;
+        color: #0e9aef;
+        .text-widget-history-container {
+            color: #a6a6a6;
+            font-weight: 100;
+            text-align: center;
+            margin: 30px 25px 0;
+            .text-widget-history {
+                text-align: left;
+                width: 250px;
+                p {
+                    display: inline-block;
+                    font-size: 11px;
+                }
+                p:nth-child(1) {
+                    width: 27%;
+                }
+                p:nth-child(2) {
+                    width: 47%;
+                }
+                p:nth-child(3) {
+                    width: 26%;
+                }
+            }
+        }
+
+        // Do _not_ set a color on this class due to a workaround for BigText
+        // removing style attributes on its children.
+        .dashboard-widget-data-value {
+            margin: 0;
+            font-weight: 900;
+            line-height: 0.7;
+        }
+
+        .dashboard-outer {
+            margin: 0 30px;
+            width: 240px;
+            .widget-preview & {
+                width: auto;
+                @media screen and (min-width: @screen-xs) { // 480px and up
+                    width: 240px;
+                }
+            }
+            .dashboard-widget-data-units {
+                font-size: 50%;
+            }
+        }
+
+        .dashboard-line-widget {
+            height: 140px;
+            width: 290px;
+            margin-left: 3px;
+            text {
+                font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 12px;
+                font-weight: 100;
+            }
+        }
+
+        .dashboard-gauge-widget {
+            text {
+                font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 12px;
+                font-weight: 100;
+            }
+            width: 290px;
+            margin-left: 5px;
+        }
+
+        // Holds the chart inside the windrose widget
+        .dashboard-windrose-widget {
+            height: 290px;
+            width: 100%;
+            position: absolute;
+            top: 35px;
+        }
+    }
+
+    // "New widget" banner
+    .banner {
+        background-color: #f8ac59; // Same as warning colour
+        color: #fff;
+        font-size: 20px;
+        font-weight: 100;
+        padding: 5px 12px 6px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        top: 73px;
+        z-index: 1;
+    }
+
+}
+
+.dashboard-widget--windrose {
+    .dashboard-widget-data-name {
+        // Show the widget title above the windrose chart
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.dashboard-widget-title {
+    font-size: 14px;
+    font-weight: 300;
+    padding: 8px 0 10px 15px;
+    margin-bottom: 0;
+    .truncate-one-line;
+    white-space: nowrap;
+}
+
+.dashboard-widget-grid {
+    display: block;
+    margin: 0 auto;
+}
+
+.dashboard-intro-block {
+    margin: 40px auto 0;
+    width: 300px;
+    .widget-preview & {
+        width: auto;
+        @media screen and (min-width: @screen-xs) { // 480px and up
+            width: 300px;
+        }
+    }
+    .dashboard-intro-title, .dashboard-intro-description {
+        width: 700px;
+        @media (max-width: 820px) {
+            width: 200%;
+        }
+        @media (max-width: 640px) {
+            width: 100%;
+        }
+    }
+    .dashboard-intro-title {
+        font-weight: 700;
+        margin-bottom: 35px;
+    }
+    .dashboard-intro-description {
+        font-size: 16px;
+        font-weight: 200;
+    }
+}

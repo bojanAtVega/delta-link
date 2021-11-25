@@ -1,0 +1,19 @@
+#tunnel-status {
+    // TODO: Re-work mark-up so targetting IDs and spans is not required
+    > span {
+        &:nth-child(1) {
+            font-weight: bold;
+        }
+        &:nth-child(2) {
+            padding-left: 20px;
+            > span {
+                padding-left: 3px;
+            }
+        }
+    }
+}
+
+#tunnel-status-response {
+    margin-left: 86px;
+    display: block;
+}

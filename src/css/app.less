@@ -1,0 +1,92 @@
+// Bootstrap
+@import "../bower/bootstrap/less/bootstrap";
+
+// Set correct path to the Glyphicon fonts
+@icon-font-path: "../bower/bootstrap/fonts/";
+
+// Third party
+@import (inline) "../bower/angular-notify/dist/angular-notify.css";
+@import (inline) "../bower/angular-bootstrap-colorpicker/css/colorpicker.css";
+@import (inline) "../bower/font-awesome/css/font-awesome.css";
+@import (inline) "../bower/iCheck/skins/square/green.css";
+@import (inline) "../bower/datatables/media/css/jquery.dataTables.css";
+@import (inline) "../bower/angular-datatables/dist/datatables.bootstrap.css";
+@import (inline) "../bower/jquery-ui/themes/base/jquery-ui.css"; // This contains all the component files in one.
+
+// Theme files
+@import (inline) "animate.css";
+@import (inline) "style.css";
+
+// Our custom app styles
+@import 'base/mixins';
+@import 'base/mixins/pull';
+@import 'base/mixins/text-align';
+@import 'base/utils';
+@import 'components/badge';
+@import 'components/button';
+@import 'components/choose-day';
+@import 'components/content-header';
+@import 'components/data-tables';
+@import 'components/dashboard';
+@import 'components/dashboard-widget';
+@import 'components/forms';
+@import 'components/detail';
+@import 'components/device';
+@import 'components/gateway';
+@import 'components/ibox-content';
+@import 'components/ibox-title';
+@import 'components/list-group';
+@import 'components/logger';
+@import 'components/loginscreen';
+@import 'components/modal';
+@import 'components/modal-backdrop';
+@import 'components/modal-header';
+@import 'components/modal-body';
+@import 'components/modal-download';
+@import 'components/nav--auth';
+@import 'components/nav-header';
+@import 'components/navbar--public';
+@import 'components/navbar-top-links';
+@import 'components/nav-tabs';
+@import 'components/navbar-brand';
+@import 'components/navbar-header';
+@import 'components/navbar-right';
+@import 'components/notifications';
+@import 'components/option';
+@import 'components/page-heading';
+@import 'components/page-wrapper';
+@import 'components/project-list';
+@import 'components/separator';
+@import 'components/side-navigation';
+@import 'components/spinner';
+@import 'components/swatch';
+@import 'components/switch';
+@import 'components/tab-pane';
+@import 'components/table';
+@import 'components/tooltip';
+@import 'components/tunnel-status';
+@import 'components/welcome';
+@import 'components/widget';
+
+// Declared later so gutter styles can override other margin settings
+@import "base/mixins/gutter";
+
+// General styles
+body {
+    // Make sure page will be no thinner than mobile portrait
+    // Changed from 320 to 300 to stop horizontal scrollbars appearing on
+    // browsers whose scrollbars overlay the body content (e.g. Chrome, IE11)
+    // rather than have scrollbars outside the body content (e.g. IE9)
+    min-width: 300px;
+    @media only screen and (max-width: 319px) {
+        // Theme has disabled horizontal scrolling, restore this on devices thinner than 320px
+        overflow-x: auto;
+    }
+
+}
+
+// Fixes a bug in Bootstrap where .dropdown-menu is applied after its modifiers
+.dropdown-menu-right {
+    right: 0;
+    left: auto;
+}

@@ -1,0 +1,45 @@
+// Text align - like Bootstrap's text-left/text-right classes, but breakpoint-specific
+// Usage: .text-right-sm, .text-left-md etc.
+.make-text-left(@breakpoint) {
+    .text-left-@{breakpoint} {
+        text-align: left !important;
+    }
+}
+.make-text-right(@breakpoint) {
+    .text-right-@{breakpoint} {
+        text-align: right !important;
+    }
+}
+.make-text-center(@breakpoint) {
+    .text-center-@{breakpoint} {
+        text-align: center !important;
+    }
+}
+
+// Extra small grid
+@media (min-width: 0px) and (max-width: @screen-xs-max) {
+    .make-text-left(xs);
+    .make-text-right(xs);
+    .make-text-center(xs);
+}
+
+// Small grid
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    .make-text-left(sm);
+    .make-text-right(sm);
+    .make-text-center(sm);
+}
+
+// Medium grid
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+    .make-text-left(md);
+    .make-text-right(md);
+    .make-text-center(md);
+}
+
+// Large grid
+@media (min-width: @screen-lg-min) {
+    .make-text-left(lg);
+    .make-text-right(lg);
+    .make-text-center(lg);
+}
