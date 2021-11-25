@@ -1,0 +1,41 @@
+.choose-day {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    .clearfix();
+    margin-bottom: 25px;
+}
+.choose-day__item {
+    float: left;
+    border: 1px solid #cdc8c1;
+    min-width: 44px;
+    min-height: 44px;
+    text-align: center;
+    padding: 12px;
+    margin-right: 5px;
+    @media screen and (max-width: @screen-sm) { // Up to 768px
+        margin-bottom: 5px;
+    }
+    &.selected {
+        border-color: #23c6c8;
+        background-color: #23c6c8;
+        color: #fff;
+    }
+    &.checkbox-inline {
+        padding-top: 12px;
+        @media screen and (max-width: @screen-sm) { // Up to 768px
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.choose-day__input {
+    visibility: hidden;
+    position: absolute;
+}
+
+.choose-day__input:checked + .choose-day__item  {
+    border-color: #1c84c6;
+    background-color: #1c84c6;
+    color: #fff;
+}

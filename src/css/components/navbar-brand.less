@@ -1,0 +1,16 @@
+.navbar-brand {
+    .top-navigation & {
+        // Replace text with background logo
+        .text-hide();
+        .img-retina('../img/logo-horizontal.png'; '../img/logo-horizontal@2x.png'; '../img/logo-horizontal@3x.png'; 250px; 50px);
+        background-repeat: no-repeat;
+        background-position: center;
+        @media only screen and (max-width: @screen-xs-min) {
+            background-position: center;
+            width: 100%;
+        }
+        margin: 0 auto;
+        width: 250px;
+        padding: 0px;
+    }
+}

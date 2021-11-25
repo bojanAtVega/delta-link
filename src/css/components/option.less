@@ -1,0 +1,40 @@
+.option {
+    display: block;
+    margin: 0 0 15px 0;
+    @media screen and (max-width: @screen-xs-max) { // Up to 767px
+        .clearfix();
+        position: relative;
+        .label {
+            float: right;
+            white-space: normal;
+            text-align: right;
+            line-height: 1.4;
+            max-width: 80%;
+            padding-bottom: 4px;
+        }
+    }
+    @media screen and (min-width: @screen-sm) { // 768px and up
+        margin: 15px 0 30px 0;
+        .label {
+            padding-bottom: 4px;
+        }
+    }
+}
+.option--inline {
+    display: block;
+    margin: 0 0 15px 0;
+    @media screen and (min-width: @screen-sm) { // 768px and up
+        display: inline-block;
+        margin: 0 5px 20px 0;
+    }
+}
+
+.option__label {
+    font-weight: bold;
+    color: #23c6c8;
+    @media screen and (max-width: @screen-xs-min) { // Up to 480px
+        float: right;
+        max-width: 80%;
+        text-align: right;
+    }
+}

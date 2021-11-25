@@ -1,0 +1,32 @@
+#page-wrapper {
+    padding-bottom: 49px;
+}
+
+body.body-small.fixed-sidebar.mini-navbar #page-wrapper {
+    // This stops the main page content from being crushed when the left nav opens
+    // The theme originally just added left margin, same width as nav
+    // Add same amount of negative right margin, and content will move not squash
+    margin: 0 -220px 0 220px;
+}
+
+.pace-done .navbar-static-side,
+.pace-done .nav-header,
+.pace-done li.active,
+.pace-done #page-wrapper,
+.pace-done .footer {
+     -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+.sidebar-done .navbar-static-side,
+.sidebar-done .nav-header,
+.sidebar-done li.active,
+.sidebar-done #page-wrapper,
+.sidebar-done .footer {
+     -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}

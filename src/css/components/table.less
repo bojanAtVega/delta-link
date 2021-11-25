@@ -1,0 +1,129 @@
+// !important in this file is used to override more specific classes from other
+// table types, like .table > tbody > tr > td (likely from Bootstrap)
+
+.table-responsive__controls {
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+    @media only screen and (max-width: @screen-xs-max) { // 767px
+        margin: 10px 13px;
+    }
+    & + .dataTables_wrapper {
+        @media only screen and (min-width: 1025px) {
+            clear: none;
+        }
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@media only screen and (max-width: @screen-xs-max) { // 767px
+    // Stop table from actually displaying like a table
+    .table-responsive--restructure table,
+    .table-responsive--restructure thead,
+    .table-responsive--restructure tbody,
+    .table-responsive--restructure th,
+    .table-responsive--restructure td,
+    .table-responsive--restructure tr {
+        display: block;
+    }
+
+    // Hide table headers (but not display: none;, for accessibility)
+    .table-responsive--restructure thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    // Width of left column, that will contain table header text
+    @header-width: 35%;
+
+    .table-responsive--restructure td {
+        // Behave like a "row"
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: @header-width !important;
+        white-space: normal;
+        text-align: right;
+        // Make sure empty cells (plus vertical padding have a height of at least 35px)
+        min-height: 18px;
+        &:last-child {
+            padding-left: 0px !important;
+            text-align: right;
+        }
+    }
+
+    .table-responsive--restructure td:before {
+        // Behave like a table header
+        position: absolute;
+        // Top/left values mimic padding
+        top: 6px;
+        left: 6px;
+        width: @header-width;
+        padding-right: 10px;
+        white-space: normal;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    // Label the data ("fake" the now-hidden table headers)
+    .table-responsive--restructure td:before {
+        content: attr(data-title);
+        margin-top: 2px;
+    }
+}
+
+.table-responsive--restructure--full-width {
+    @media only screen and (max-width: @screen-xs-max) { // 767px
+        border: none;
+        table {
+            border: none !important;
+        }
+        .table-responsive__controls {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+    }
+}
+
+.table-responsive--restructure__row {
+    @media only screen and (max-width: @screen-xs-max) { // 767px
+        margin-bottom: 20px;
+        border-top: 1px solid #e7e7e7;
+        border-left: 1px solid #e7e7e7;
+        td {
+            text-align: right;
+            &:last-child {
+                text-align: right;
+            }
+        }
+    }
+    td {
+        &:last-child {
+            text-align: right;
+            .table--sortable--datasets--selectable & {
+                @media only screen and (min-width: @screen-sm-min) { // 768px
+                    text-align: left;
+                }
+            }
+            @media only screen and (min-width: @screen-xs-max) and (max-width: @screen-sm-max) { // 991px
+                .btn {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+        &:nth-child(2) {
+            .table--sortable--datasets--selectable & {
+                input[type="radio"] {
+                    margin-top: 0px;
+                    @media only screen and (min-width: @screen-sm-min) { // 768px
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
+}

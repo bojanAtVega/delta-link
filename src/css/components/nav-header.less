@@ -1,0 +1,37 @@
+.nav-header {
+    // New padding for default skin only, based on Delta-T logo
+    padding: 13px 25px 10px 25px;
+    // When the nav header is inside a login/register screen:
+    .loginscreen & {
+        margin-bottom: 15px;
+        background-position: center;
+    }
+    // For auth screens
+    .gray-bg & {
+        background: none;
+        @media only screen and (min-width: @screen-sm-min) {
+            margin-bottom: 35px;
+        }
+        @media only screen and (max-width: @screen-xs-min) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.nav-header__logo {
+    // Replace text with background logo
+    .text-hide();
+    width: 150px;
+    height: 132px;
+    .img-retina('../img/logo.png'; '../img/logo@2x.png'; '../img/logo@3x.png'; 150px; 132px);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+}
+
+.nav-header__logo--auth {
+    width: 200px;
+    height: 133px;
+    .img-retina('../img/logo-auth.png'; '../img/logo-auth@2x.png'; '../img/logo-auth@3x.png'; 200px; 133px);
+}

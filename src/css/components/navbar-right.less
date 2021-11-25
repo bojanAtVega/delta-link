@@ -1,0 +1,36 @@
+.navbar-right {
+    @media only screen and (max-width: @screen-xs-max) {
+        float: none;
+        margin-left: 19px;
+    }
+    @media only screen and (max-width: @screen-xs-min) {
+        &.navbar-top-links li a {
+            padding-left: 12px;
+            padding-right: 0;
+        }
+    }
+    .top-navigation & {
+        // NOTE: these styles will need to be replaced if any more links are added
+        // to the top navigation on public pages.
+        // See also: navbar--public.less
+        li:last-child {
+            margin-right: 0px;
+        }
+        li > a:hover {
+            color: #1c84c6;
+        }
+        @media only screen and (max-width: @screen-xs-min) {
+            float: none;
+            margin-right: 0px;
+            width: 100%;
+            li:last-child {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+    select {
+        // IE9 - IE11 fix
+        display: inline-block;
+    }
+}

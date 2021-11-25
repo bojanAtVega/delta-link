@@ -1,0 +1,25 @@
+.btn--icon {
+    @media screen and (max-width: 479px) {
+        width: 100%;
+        display: inline-block;
+        white-space: normal;
+        vertical-align: text-top;
+        text-align: left;
+        .fa {
+            float: left;
+            margin-top: 0.2em;
+            + span {
+                margin-left: 1.2em;
+                display: block;
+            }
+        }
+    }
+}
+
+.btn-block--md {
+    display: none;
+
+    @media (min-width: @screen-md) {
+        display: inline-block;
+    }
+}

@@ -1,0 +1,45 @@
+// Floating - like Bootstrap's pull-left/pull-right classes, but breakpoint-specific
+// Usage: .pull-right-sm, .pull-left-md etc.
+.make-pull-left(@breakpoint) {
+    .pull-left-@{breakpoint} {
+        float: left !important;
+    }
+}
+.make-pull-right(@breakpoint) {
+    .pull-right-@{breakpoint} {
+        float: right !important;
+    }
+}
+.make-pull-none(@breakpoint) {
+    .pull-none-@{breakpoint} {
+        float: none !important;
+    }
+}
+
+// Extra small grid
+@media (min-width: 0px) and (max-width: @screen-xs-max) {
+    .make-pull-left(xs);
+    .make-pull-right(xs);
+    .make-pull-none(xs);
+}
+
+// Small grid
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    .make-pull-left(sm);
+    .make-pull-right(sm);
+    .make-pull-none(sm);
+}
+
+// Medium grid
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+    .make-pull-left(md);
+    .make-pull-right(md);
+    .make-pull-none(md);
+}
+
+// Large grid
+@media (min-width: @screen-lg-min) {
+    .make-pull-left(lg);
+    .make-pull-right(lg);
+    .make-pull-none(lg);
+}

@@ -1,0 +1,16 @@
+.detail__controls {
+    text-align: right;
+    @media screen and (min-width: @screen-sm-min) and (max-width: @screen-md-max) { // 768px to 1199px
+        .btn {
+            margin-bottom: 5px;
+        }
+    }
+    @media only screen and (max-width: @screen-xs-max) {
+        text-align: left;
+        .btn {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+}

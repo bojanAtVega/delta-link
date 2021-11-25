@@ -1,0 +1,110 @@
+.form--mandatory-fields {
+  .form-group.required {
+    position: relative;
+  }
+  .mandatory-label {
+    position: absolute;
+    top: 10px;
+    right: -12px;
+    color: @brand-danger;
+  }
+  .text-danger {
+    color: @brand-danger;
+  }
+  // For auth screens
+  .gray-bg & {
+    @media only screen and (min-width: @screen-sm-min) {
+      margin-top: 35px;
+    }
+  }
+}
+.btn {
+  &.left-align {
+    padding-left: 3px;
+  }
+}
+
+.radio,
+.checkbox {
+  &.left-align {
+    label {
+      padding-left: 3px;
+    }
+  }
+
+  &.inline-correction {
+    margin-top: 9px;
+  }
+}
+
+.form-inline-container {
+  display: flex;
+}
+
+// To avoid iOS zooming when you focus an input, increase font size to 16px
+.form-control {
+  @media only screen and (max-width: 1024px) and (orientation: landscape),
+    only screen and (max-width: 1024px) and (orientation: portrait) {
+    font-size: 16px;
+    min-height: 36px;
+    select& {
+      margin-left: 0;
+    }
+  }
+
+  select& {
+    padding: 0px 12px;
+  }
+
+  input& {
+    // Remove iOS grey inset border
+    -webkit-appearance: none;
+  }
+}
+
+.form-horizontal--inline {
+  .control-label {
+    @media screen and (min-width: @screen-sm) {
+      // 768px and up
+      .text-right();
+      width: 100%;
+    }
+  }
+  .btn {
+    margin-right: 7px;
+  }
+  .pull-right .btn {
+    margin-left: 7px;
+    margin-right: 0;
+  }
+}
+
+.form-section-break {
+  width: 100%;
+  height: 20px;
+  border-bottom: 1px solid #e0e0d1;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.form-section-title {
+  margin-bottom: 55px;
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+.form-inline__text {
+  // Match text between form fields in inline forms to the height of the fields
+  display: inline-block;
+  line-height: 34px;
+  // On tablet and up, when a select tag follows inline form text, limit its width.
+  // This is for the select tag in the Thresholds tab of the Edit Widget form.
+  & + select {
+    @media screen and (min-width: @screen-sm) {
+      // 768px and up
+      // On select tags, max-width has no effect unless you also set width
+      width: 100%;
+      max-width: 175px;
+    }
+  }
+}

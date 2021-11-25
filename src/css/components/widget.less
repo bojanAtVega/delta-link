@@ -1,0 +1,116 @@
+.widget--longer-text {
+    span {
+        display: block;
+    }
+    @media screen and (min-width: @screen-md-min) and (max-width: @screen-md-max) { // 992px to 1199px
+        min-height: 90px;
+        h2 {
+            font-size: 20px;
+            margin-left: 55px;
+        }
+        span {
+            margin-top: 5px;
+            margin-left: 55px;
+        }
+    }
+    @media screen and (max-width: @screen-xs-max) { // Up to 767px
+        h2 {
+            font-size: 20px;
+        }
+        span {
+            margin-top: 5px;
+        }
+    }
+}
+.widget--multiline {
+    @media screen and (min-width: @screen-md-min) and (max-width: @screen-md-max) { // 992px to 1199px
+        h2, span {
+            margin-left: 40px;
+        }
+    }
+}
+
+// Widget tabs, preview, and summary page
+@media screen and (min-width: @screen-md) { // 992px and up
+    .widget-preview--tabs {
+        float: left;
+        padding-right: 30px;
+        width: ~"calc(100% - 330px)";
+    }
+    .widget-preview--summary {
+        border-left: 1px solid #2f4050;
+        float: left;
+        padding-left: 30px;
+        width: 330px;
+    }
+}
+
+.widget-preview {
+    .widget-preview__title {
+        margin-top: 8px;
+        @media screen and (min-width: @screen-md) { // 992px and up
+            margin-top: 0;
+        }
+    }
+    .widget-preview__summary {
+        .widget-preview__title {
+            @media screen and (min-width: @screen-md) { // 992px and up
+                margin-top: 30px;
+            }
+        }
+    }
+    .dashboard-widget-container {
+        float: none;
+        margin: 0 auto;
+        width: auto;
+        @media screen and (min-width: @screen-xs) { // 480px and up
+            margin: 0;
+            width: 300px;
+        }
+        .fixed-sidebar:not(.mini-navbar) & {
+            // Override too-specific styles from dashboard-widget.less
+            // TODO: re-factor both files to be less specific
+            width: auto;
+        }
+    }
+    .dashboard-widget {
+        margin: 0;
+    }
+    .dashboard-widget-title {
+        width: 300px;
+        margin: 0 auto;
+        padding-left: 0;
+    }
+    // Widget previews sit inside the "standard" wrapper element and so need some
+    // work on their margins to avoid being cut off horizontally on mobile
+    @media screen and (max-width: 479px) {
+        .dashboard-widget-square {
+            margin: 0 -30px;
+        }
+        .dashboard-widget {
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    // Hide the "Connect your data" banner
+    .banner {
+        display: none;
+    }
+}
+
+.widget-preview--summary {
+    .widget-preview__title {
+        @media screen and (max-width: 991px) {
+            margin-top: 30px;
+        }
+    }
+}
+
+.widget-preview--summary__controls {
+    border-top: 1px solid #d3d3d3;
+    padding: 15px 0 20px;
+    &:first-of-type {
+        margin-top: 20px;
+    }
+}
